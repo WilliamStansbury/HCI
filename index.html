@@ -1,133 +1,221 @@
+
+<!-- References: -->
+<!-- I used this link to help with highlighted tabs: https://www.w3schools.com/howto/howto_js_tabs.asp -->
+<!-- I used this link to help with expanding photos that are clicked on: https://www.w3schools.com/howto/howto_js_lightbox.asp -->
+<!-- I used this link to help with the jump to top button: https://css-tricks.com/forums/topic/elegantly-expand-hidden-div-as-you-scroll -->
+
+
 <!DOCTYPE html>
 <html>
 <head>
-	<link rel="stylesheet" type="text/css" href="style.css">
-	<title>HCI Assignment 2</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+
 </head>
 <body>
+  <div id = "myID" class="scrollButton">
+  <a href="#top">Jump to top of page</a>
+  </div>
 
-	<div class="header">
-		<h1>HCI Assignment 2</h1>
-	</div>
+<div class="tab">
+  <button class="tablinks" onclick="openCity(event, 'Main')" id="default">Main</button>
+  <button class="tablinks" onclick="openCity(event, 'Images')">Images</button>
+  <button class="tablinks" onclick="openCity(event, 'Videos')">Videos</button>
+  <button class="tablinks" onclick="openCity(event, 'Links')">Links</button>
+</div>
 
-	
+<div id="Main" class="tabcontent">
+  <div class="bio">
+      <div>
+        <img src="londoneye.JPG" style="width:500px;height:600px;">
+      </div>
 
-	<div class="menu">
-		<div>
-			<a href="#main">Main</a>
-		</div>
-		<div>
-			<a href="#images">Images</a>
-		</div>
-		<div>
-			<a href="#videos">Videos</a>
-		</div>
-		<div>
-			<a href="#links">Links</a>
-		</div>
-	</div>
-    <div class="tab-folder">
-    	<div id="main" class="tab-content">
+      <div>
+        <p>
+          This is a test paragraph. This is a test paragraph. This is a test paragraph. This is a test paragraph. This is a test paragraph. This is a test paragraph. This is a test paragraph. This is a test paragraph. This is a test paragraph. This is a test paragraph. This is a test paragraph. This is a test paragraph. This is a test paragraph. This is a test paragraph. This is a test paragraph. This is a test paragraph. This is a test paragraph. This is a test paragraph. This is a test paragraph. This is a test paragraph. This is a test paragraph. This is a test paragraph. This is a test paragraph. This is a test paragraph.  
 
-		<div class="bio">
-			<div>
-				<img src="londoneye.JPG" style="width:500px;height:600px;">
-			</div>
+        </p>
 
-			<div>
-				<p>
-					This is a test paragraph. This is a test paragraph. This is a test paragraph. This is a test paragraph. This is a test paragraph. This is a test paragraph. This is a test paragraph. This is a test paragraph. This is a test paragraph. This is a test paragraph. This is a test paragraph. This is a test paragraph. This is a test paragraph. This is a test paragraph. This is a test paragraph. This is a test paragraph. This is a test paragraph. This is a test paragraph. This is a test paragraph. This is a test paragraph. This is a test paragraph. This is a test paragraph. This is a test paragraph. This is a test paragraph. This is a test paragraph. This is a test paragraph. 
+      </div>
+    </div>
+</div>
 
-				</p>
+<div id="Images" class="tabcontent">
 
-			</div>
-		</div>
+  <p>
+    Note to the grader: I was unable to close images by clicking on outside of them, so instead, there is an 'X' button that can be used to close the image. 
+  </p>
 
-	</div>
-    <div id="images" class="tab-content">
-    	<div class = "imageGrid">
-    		<div class="row">
-			  <div class="column">
-				<img src="NotreDame.JPG" style="max-width: 33%">
-				<img src="PinkDress.JPG" style="max-width: 33%">
-				<img src="kiev.JPG" style="max-width: 33%">
-			  </div>
-			  <div class="column">
-				<img src="train.JPG" style="max-width: 33%">
-				<img src="londoneye.JPG" style="max-width: 33%">
-			  </div>
-    		<!-- <div>
-				<img src="LondonEye.JPG" style="max-width: 30%">
-			</div>
-			<div>
-				<img src="NotreDame.JPG" style="max-width: 30%">
-			</div>
-			<div>
-				<img src="PinkDress.JPG" style="max-width: 30%">
-			</div>
-			<div>
-				<img src="InternTrip.JPG" style="max-width: 30%">
-			</div> -->
-    	</div>
-    	</div>
+  <div class="row">
+  <div class="column">
+    <img src="NotreDame2.jpg" style="width:100%" onclick="openModal();currentSlide(1)" class="hover-shadow cursor">
+  </div>
+  <div class="column">
+    <img src="PinkDress2.jpg" style="width:100%" onclick="openModal();currentSlide(2)" class="hover-shadow cursor">
+  </div>
+  <div class="column">
+    <img src="kiev2.jpg" style="width:100%" onclick="openModal();currentSlide(3)" class="hover-shadow cursor">
+  </div>
+  <div class="column">
+    <img src="train2.jpg" style="width:100%" onclick="openModal();currentSlide(4)" class="hover-shadow cursor">
+  </div>
+</div>
+ <div class="row">
+  <div class="column">
+    <img src="londoneye2.jpg" style="width:100%" onclick="openModal();currentSlide(5)" class="hover-shadow cursor">
+  </div>
+</div>
 
-	</div>
-    <div id="videos" class="tab-content">
 
-<!--     	<video width="320" height="240" controls>
-		  <source src="2017.MOV" type="video/mp4">
-		  <source src="2017.ogg" type="video/ogg">
-			Your browser does not support the video tag.
-		</video>
- -->
- <div class = "videoGrid">
- 	<div>
- 		<iframe width="560" height="315" src="https://www.youtube.com/embed/kPRA0W1kECg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
-		</iframe>
- 	</div>
- 	<div>
- 		<iframe width="560" height="315" src="https://www.youtube.com/embed/puSkP3uym5k" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
- 	</div>
- 	<div>
- 		<iframe width="560" height="315" src="https://www.youtube.com/embed/j9nOPUxjVrM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
- 	</div>
- 	<div>
- 		<iframe width="560" height="315" src="https://www.youtube.com/embed/pJZ4zgiKv-c" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
- 	</div>
- </div>
-		
-		
-<!-- 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/sxm3Xyutc1s" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
 
-	</div>
-	<div id="links" class="tab-content">
 
-		<div class="navbar">
-			<div>
-				<a href="https://github.com/WilliamStansbury/HCI">
-			<img border="0" alt="github" src="github.png" width="100" height="100">
-			</a>
-			</div>
-			<div>
-				<a href="https://github.com/WilliamStansbury/HCI">My github repo for this quarter</a>
-			</div>
-			
-		</div>
+<div id="myModal" class="modal">
+  <span class="close cursor" onclick="closeModal()">&times;</span>
+  <div class="modal-content">
 
-		<div class="navbar">
-			<div>
-				<a href="https://github.com/WilliamStansbury/HCI">
-			<img border="0" alt="github" src="github2.png" width="100" height="100">
-			</a>
-			</div>
-			<div>
-				<a href="https://github.com/WilliamStansbury/HCI">The same link with another picture</a>
-			</div>
-			
-		</div>
+    <div class="mySlides">
+      <img src="NotreDame2.jpg" style="width:100%">
+    </div>
 
-	</div>
+    <div class="mySlides">
+      <img src="PinkDress2.jpg" style="width:100%">
+    </div>
+
+    <div class="mySlides">
+      <img src="kiev2.jpg" style="width:100%">
+    </div>
     
+    <div class="mySlides">
+      <img src="train2.jpg" style="width:100%">
+    </div>
+
+    <div class="mySlides">
+      <img src="londoneye2.jpg" style="width:100%">
+    </div>
+
+    <div class="caption-container">
+      <p id="caption"></p>
+    </div>
+  </div>
+</div>
+</div>
+
+<div id="Videos" class="tabcontent">
+    <div class="video-row">
+      <div class="video-column">
+        <iframe src="https://www.youtube.com/embed/kPRA0W1kECg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+        </iframe>
+      </div>
+      <div class="video-column">
+        <iframe  src="https://www.youtube.com/embed/puSkP3uym5k" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </div>
+      <div class="video-row">
+      <div class="video-column">
+        <iframe  src="https://www.youtube.com/embed/j9nOPUxjVrM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <div class="video-column">
+        <iframe  src="https://www.youtube.com/embed/pJZ4zgiKv-c" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </div>
+</div>
+
+<div id="Links" class="tabcontent">
+  <div class="navbar">
+    <div>
+      <a href="https://github.com/WilliamStansbury/HCI">
+        <img border="0" alt="github" src="github.png" width="100" height="100">
+      </a>
+    </div>
+    <div>
+      <a href="https://github.com/WilliamStansbury/HCI">My github repo for this quarter</a>
+    </div>
+      
+  </div>
+
+    <div class="navbar">
+      <div>
+        <a href="https://github.com/WilliamStansbury/HCI">
+          <img border="0" alt="github" src="github2.png" width="100" height="100">
+        </a>
+      </div>
+      <div>
+        <a href="https://github.com/WilliamStansbury/HCI">The same link with another picture</a>
+      </div>
+    </div>
+</div>
+
+<script>
+myID = document.getElementById("myID");
+
+myID.className = "scrollButton hide";
+
+ function myScrollFunc () {
+    var y = window.scrollY;
+    if (y >= 150) {
+        myID.className = "scrollButton show"
+    } else {
+        myID.className = "scrollButton hide"
+    }
+}
+
+window.addEventListener("scroll", myScrollFunc);
+
+document.getElementById("default").click();
+
+
+function openCity(evt, cityName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+
+function openModal() {
+  document.getElementById("myModal").style.display = "block";
+}
+
+function closeModal() {
+  document.getElementById("myModal").style.display = "none";
+}
+
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("demo");
+  var captionText = document.getElementById("caption");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+  captionText.innerHTML = dots[slideIndex-1].alt;
+}
+
+
+</script>
+   
 </body>
-</html>
+</html> 
